@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-notification-open-test
+Exec=sailfish-qml harbour-notification-open-test
+Name=harbour-notification-open-test
+
+[X-Sailjail]
+OrganizationName=org.myorg
+ApplicationName=notification-open-test
+ExecDBus=harbour-notification-open-test -prestart
