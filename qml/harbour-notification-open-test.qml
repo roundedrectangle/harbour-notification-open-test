@@ -12,7 +12,15 @@ ApplicationWindow {
                 appName: "My app"
                 summary: "My notification"
                 // It's not even needed to implement the interface to demonstrate the problem
-                remoteActions: ([remoteAction("", "My action", "org.myorg.notification-open-test", "/org/myorg/notification-open-test", "org.myorg.notification-open-test", "myMethod")])
+                Component.onCompleted: {
+                    var actions = [remoteAction("", "My action", "org.myorg.notification-open-test", "/org/myorg/notification-open-test", "org.myorg.notification-open-test", "myMethod")]
+
+                    var inputAction = remoteAction("", "Input action", "org.myorg.notification-open-test", "/org/myorg/notification-open-test", "org.myorg.notification-open-test", "myInputMethod")
+                    inputAction.type = "input"
+                    actions.push(inputAction)
+
+                    remoteActions = actions
+                }
             }
 
             Button {
